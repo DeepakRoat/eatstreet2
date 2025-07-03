@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "906796305386",
+    "project_id": "proj1-19d38",
+    "storage_bucket": "proj1-19d38.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906796305386:android:7a633ce85d708c2756c093",
+        "android_client_info": {
+          "package_name": "com.example.eatstreet2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906796305386-bqaor0he2udagln0cb8n2c4o6o36cd5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eatstreet2",
+            "certificate_hash": "67fee1bc40e17f58096afee4469e770057872d4e"
+          }
+        },
+        {
+          "client_id": "906796305386-7pj9dk8u74lbbv923daf31ihomk5e157.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS0tmOqHtqgFnYjWF34h4qwYjdPxdqaFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906796305386-7pj9dk8u74lbbv923daf31ihomk5e157.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

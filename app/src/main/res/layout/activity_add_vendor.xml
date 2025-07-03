@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vendor Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/input_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:minLines="2" />
+
+        <EditText
+            android:id="@+id/input_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Category (e.g., Chaat, Dosa)"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/input_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price Level (1-5)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/input_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rating (0.0 - 5.0)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/input_hygiene"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hygiene Score (0.0 - 5.0)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/input_open_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Open Time (e.g., 09:00)"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/input_close_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Close Time (e.g., 21:00)"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/input_photo_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Photo URL"
+            android:inputType="textUri" />
+
+        <CheckBox
+            android:id="@+id/checkbox_is_veg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegetarian" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Vendor"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
