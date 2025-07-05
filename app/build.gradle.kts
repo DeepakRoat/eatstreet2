@@ -40,11 +40,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        if(!project.hasProperty("maps_api_key")){
+        if(!project.hasProperty("MAPS_API_KEY")){
             buildConfigField("String", "MAPS_API_KEY", "\"$mapsApiKey\"")
             resValue("string", "maps_api_key", mapsApiKey)
         }
-        if(!project.hasProperty("web_client_id")){
+        if(!project.hasProperty("WEB_CLIENT_ID")){
             buildConfigField("String", "WEB_CLIENT_ID", "\"$webClientId\"")
             resValue("string", "web_client_id", webClientId)
         }
