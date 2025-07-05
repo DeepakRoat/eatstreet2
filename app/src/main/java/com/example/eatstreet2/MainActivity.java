@@ -68,13 +68,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-
+        
         if (user == null) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
             return;
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 1001); // Any unique request code
+    }
+}
 
         placesRecyclerView = findViewById(R.id.placesRecyclerView);
         placesAdapter = new PlacesAdapter(placeItems, this);
