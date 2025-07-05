@@ -4,15 +4,15 @@ plugins {
     alias(libs.plugins.android.application)
     id("com.google.gms.google-services")
 }
-
+val mapsApiKey, webClientId
 if(!project.hasProperty("maps_api_key")){
-    val mapsApiKey = rootProject.file("local.properties")
+    mapsApiKey = rootProject.file("local.properties")
         .readLines()
         .first { it.startsWith("MAPS_API_KEY=") }
         .split("=")[1]
 }
 if(!project.hasProperty("web_client_id")){
-    val webClientId = rootProject.file("local.properties")
+    webClientId = rootProject.file("local.properties")
         .readLines()
         .first { it.startsWith("WEB_CLIENT_ID=") }
         .split("=")[1]
