@@ -90,10 +90,11 @@ These are required to:
 ```
 EatStreet2/
 ├── activities/
-│   ├── MainActivity.java
-│   └── LoginActivity.java
-│   └── PlaceItem.java
-│   └── PlacesAdapter.java
+|   ├── DetailActivity.java
+|   ├── LoginActivity.java
+|   ├── MainActivity.java
+|   ├── PlaceItem.java
+|   └── PlacesAdapter.java
 ├── res/
 │   ├── layout/
 │   │   └── activity_main.xml
