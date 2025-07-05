@@ -11,8 +11,8 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      maps_api_key: ${{ secrets.API_KEY }}
-      web_client_id: ${{ secrets.WEB_CLIENT_ID }}
+      MAPS_API_KEY: ${{ secrets.API_KEY }}
+      WEB_CLIENT_ID: ${{ secrets.WEB_CLIENT_ID }}
     steps:
     - uses: actions/checkout@v4
     - name: set up JDK 17
