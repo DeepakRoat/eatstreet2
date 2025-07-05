@@ -4,17 +4,20 @@ plugins {
     alias(libs.plugins.android.application)
     id("com.google.gms.google-services")
 }
-val mapsApiKey: String
-val webClientId: String
 
-if(!project.hasProperty("maps_api_key")){
-    mapsApiKey = rootProject.file("local.properties")
+val mapsApiKey = if (project.hasProperty("MAPS_API_KEY")) {
+    project.property("MAPS_API_KEY") as String
+} else {
+    rootProject.file("local.properties")
         .readLines()
         .first { it.startsWith("MAPS_API_KEY=") }
         .split("=")[1]
 }
-if(!project.hasProperty("web_client_id")){
-    webClientId = rootProject.file("local.properties")
+
+val webClientId = if (project.hasProperty("WEB_CLIENT_ID")) {
+    project.property("web_client_id") as String
+} else {
+    rootProject.file("local.properties")
         .readLines()
         .first { it.startsWith("WEB_CLIENT_ID=") }
         .split("=")[1]
@@ -36,6 +39,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
         if(!project.hasProperty("maps_api_key")){
             buildConfigField("String", "MAPS_API_KEY", "\"$mapsApiKey\"")
             resValue("string", "maps_api_key", mapsApiKey)
