@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
                 != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 1001); // Any unique request code
-    }
-}
+            }
+        }
 
         placesRecyclerView = findViewById(R.id.placesRecyclerView);
         placesAdapter = new PlacesAdapter(placeItems, this);
