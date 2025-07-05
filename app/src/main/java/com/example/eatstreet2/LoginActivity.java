@@ -16,7 +16,6 @@ import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.PhoneAuthCredential;
@@ -70,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                 .setGoogleIdTokenRequestOptions(
                         BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
                                 .setSupported(true)
-                                .setServerClientId(getString(R.string.default_web_client_id))
+                                .setServerClientId(getString(R.string.web_client_id))
                                 .setFilterByAuthorizedAccounts(false)
                                 .build())
                 .setAutoSelectEnabled(true)

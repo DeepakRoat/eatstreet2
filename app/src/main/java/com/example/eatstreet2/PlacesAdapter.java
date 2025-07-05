@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 
 import com.bumptech.glide.Glide;
-import com.google.android.libraries.places.api.model.Place;
 
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.PlaceViewH
 
     private final List<PlaceItem> placeList;
     private final Context context;
-    public PlacesAdapter(Context context, List<PlaceItem> placeList) {
+    public PlacesAdapter(List<PlaceItem> placeList, Context context) {
         this.context = context;
         this.placeList = placeList;
     }

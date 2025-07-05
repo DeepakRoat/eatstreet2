@@ -10,10 +10,18 @@ val mapsApiKey = rootProject.file("local.properties")
     .first { it.startsWith("MAPS_API_KEY=") }
     .split("=")[1]
 
+val webClientId = rootProject.file("local.properties")
+    .readLines()
+    .first { it.startsWith("WEB_CLIENT_ID=") }
+    .split("=")[1]
 
 android {
     namespace = "com.example.eatstreet2"
     compileSdk = 35
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         applicationId = "com.example.eatstreet2"
@@ -25,6 +33,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "MAPS_API_KEY", "\"$mapsApiKey\"")
         resValue("string", "maps_api_key", mapsApiKey)
+        buildConfigField("String", "WEB_CLIENT_ID", "\"$webClientId\"")
+        resValue("string", "web_client_id", webClientId)
     }
 
     buildTypes {

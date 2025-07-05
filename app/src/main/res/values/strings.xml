@@ -2,5 +2,4 @@
     <string name="app_name">EatStreet2</string>
     <string name="PORT">5432</string>
     <string name="trending_desc">Trending/Favorites</string>
-    <string name="default_web_client_id">906796305386-bqaor0he2udagln0cb8n2c4o6o36cd5a.apps.googleusercontent.com</string>
 </resources>

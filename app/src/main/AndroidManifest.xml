@@ -34,8 +34,6 @@
 
         <activity android:name=".DetailActivity"/>
 
-        <activity android:name=".AddVendorActivity"/>
-
         <activity android:name=".LoginActivity"/>
 
     </application>

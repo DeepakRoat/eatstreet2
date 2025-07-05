@@ -1,62 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Top Search + Location bar -->
-    <LinearLayout
-        android:id="@+id/search_location_bar"
+    <!-- Full-screen Map -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Refresh Button at Top Center -->
+    <Button
+        android:id="@+id/btn_refresh_location"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:orientation="horizontal"
-        android:background="?attr/colorPrimary"
-        android:gravity="center_vertical">
+        android:text="Refresh Location"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:elevation="10dp" />
 
-        <!-- Search / City Input -->
-        <EditText
-            android:id="@+id/searchEditText"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:hint="Search food or city"
-            android:background="@drawable/search_bg"
-            android:paddingStart="12dp"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            android:textColorHint="#A9A9A9"/>
-
-        <!-- Star/Favorite/Trending Icon -->
-        <ImageButton
-            android:id="@+id/favTrendingIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_star"
-            android:contentDescription="@string/trending_desc"/>
-    </LinearLayout>
-
-    <!-- Main content: Trending / Nearby Restaurants -->
+    <!-- RecyclerView at Bottom -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/vendorRecyclerView"
+        android:id="@+id/placesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="56dp"
-        android:layout_marginTop="70dp"
-        android:clipToPadding="false"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:background="#F2FFFFFF"
         android:padding="8dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-    <!-- Bottom Navigation -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_nav_menu"/>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:elevation="8dp" />
+</RelativeLayout>
