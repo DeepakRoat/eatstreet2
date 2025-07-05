@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      MAPS_API_KEY: ${{ secrets.API_KEY }}
+      MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
       WEB_CLIENT_ID: ${{ secrets.WEB_CLIENT_ID }}
     steps:
     - uses: actions/checkout@v4
