@@ -5,23 +5,15 @@ plugins {
     id("com.google.gms.google-services")
 }
 
-val mapsApiKey = if (project.hasProperty("MAPS_API_KEY")) {
-    project.property("MAPS_API_KEY") as String
-} else {
-    rootProject.file("local.properties")
-        .readLines()
-        .first { it.startsWith("MAPS_API_KEY=") }
-        .split("=")[1]
-}
+val mapsApiKey = rootProject.file("local.properties")
+                    .readLines()
+                    .first { it.startsWith("MAPS_API_KEY=") }
+                    .split("=")[1]
 
-val webClientId = if (project.hasProperty("WEB_CLIENT_ID")) {
-    project.property("web_client_id") as String
-} else {
-    rootProject.file("local.properties")
-        .readLines()
-        .first { it.startsWith("WEB_CLIENT_ID=") }
-        .split("=")[1]
-}
+val webClientId = rootProject.file("local.properties")
+                    .readLines()
+                    .first { it.startsWith("WEB_CLIENT_ID=") }
+                    .split("=")[1]
 
 android {
     namespace = "com.example.eatstreet2"
@@ -40,14 +32,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        if(!project.hasProperty("MAPS_API_KEY")){
-            buildConfigField("String", "MAPS_API_KEY", "\"$mapsApiKey\"")
-            resValue("string", "maps_api_key", mapsApiKey)
-        }
-        if(!project.hasProperty("WEB_CLIENT_ID")){
-            buildConfigField("String", "WEB_CLIENT_ID", "\"$webClientId\"")
-            resValue("string", "web_client_id", webClientId)
-        }
+        buildConfigField("String", "MAPS_API_KEY", "\"$mapsApiKey\"")
+        resValue("string", "maps_api_key", mapsApiKey)
+        buildConfigField("String", "WEB_CLIENT_ID", "\"$webClientId\"")
+        resValue("string", "web_client_id", webClientId)
     }
 
     buildTypes {
